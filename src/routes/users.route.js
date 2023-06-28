@@ -4,12 +4,11 @@ const router = express.Router({ mergeParams: true });
 const usersController = require('../controllers/users.controller');
 
 router.route('/')
-  .get(usersController.fetchUsers);
-
-router.route('/')
+  .get(usersController.fetchUsers)
   .post(usersController.addUser);
 
-router.route('/user/:_id')
-  .get(usersController.fetchUser);
+router.route('/:_id')
+  .get(usersController.fetchUser)
+  .post(usersController.updateUser)
 
 module.exports = router;

@@ -11,6 +11,8 @@ const credentials = { key, cert };
 //setup app & its routes
 const app = express();
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const routes = require('./routes/index.route');
 app.use(routes);
 

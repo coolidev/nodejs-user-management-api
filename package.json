@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-user-management-api",
+  "version": "1.0.0",
+  "description": "Node API for user management",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "dev:https": "nodemon src/index.js --key sslcert/server.key --cert sslcert/server.cert",
+    "start": "node src/index.js",
+    "build": "npm run clean && cp -r src dist/src && cp -r bin dist/bin && cp *.yml dist && cp *.yaml dist && cp *.json dist && cp README.md dist && cp LICENSE dist",
+    "clean": "rimraf dist && mkdirp dist"
+  },
+  "author": "",
+  "license": "EPL-2.0",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "swagger-ui-express": "4.6.3",
+    "yargs": "17.7.2"
+  },
+  "devDependencies": {
+    "mkdirp": "3.0.1",
+    "node-fetch": "3.3.1",
+    "nodemon": "2.0.22",
+    "rimraf": "5.0.1"
+  }
+}
